@@ -11,15 +11,26 @@
 @implementation GKDoorCell
 
 @synthesize door;
+@synthesize popButton;
+@synthesize username;
+@synthesize password;
 
 - (id) initWithDoor: (NSMutableDictionary *)door
 {
-    self = [super initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"GKDoorCell"];
+    self = [super initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"GKDoorCell"];
     
     if(self){
         self.door = [[NSMutableDictionary alloc] initWithDictionary:door];
         
         self.textLabel.text = [self.door objectForKey:@"name"];
+        
+        self.detailTextLabel.text = [self.door objectForKey:@"state"];
+        
+        popButton = [[GKDoorActionButton alloc] init];
+        [popButton addTarget:self action:@selector(popDoor:) forControlEvents:UIControlEventTouchUpInside];
+        
+        self.accessoryView = popButton;
+        //self.userInteractionEnabled = NO;
     }
     
     return self;
@@ -39,6 +50,64 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+- (void) setUsernameAndPass: (NSString *) username: (NSString *)password
+{
+    self.username = username;
+    self.password = password;
+}
+
+- (IBAction)popDoor:(id)sender
+{
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.gatekeeper.csh.rit.edu/pop/%u", [[door objectForKey:@"id"] integerValue]]];
+    
+    NSLog(@"URL: %@", url);
+    
+    __block ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
+    NSMutableDictionary *requestHeaders = [[NSMutableDictionary alloc] initWithObjectsAndKeys:@"application/json", @"Accept", nil];
+    
+    
+    
+    [request setRequestHeaders: requestHeaders];
+    [request setPostValue:username forKey:@"username"];
+    [request setPostValue:password forKey:@"password"];
+    
+    // TODO - make this actually check the cert
+    [request setValidatesSecureCertificate:NO];
+    
+    [request setCompletionBlock:^{
+        //[spinner stopAnimating];
+        NSData *respData = [[request responseString] dataUsingEncoding:NSUTF8StringEncoding];
+        
+        NSError *jsonErr;
+        
+        NSMutableDictionary *jsonResp = [NSJSONSerialization JSONObjectWithData:respData options:NSJSONReadingMutableContainers error:&jsonErr];
+        NSLog(@"JSON:\n%@", jsonResp);
+        
+        if([[jsonResp objectForKey:@"success"] integerValue] == 1){
+            self.detailTextLabel.text = @"unlocked";
+            
+            sleep(5);
+            
+            self.detailTextLabel.text = @"locked";
+        }
+        
+        
+    }];
+    
+    [request setFailedBlock:^{
+        //[spinner stopAnimating];
+        NSError *err = [request error];
+        NSData *respData = [[request responseString] dataUsingEncoding:NSUTF8StringEncoding];
+        
+        NSError *jsonErr;
+        
+        NSMutableDictionary *jsonResp = [NSJSONSerialization JSONObjectWithData:respData options:NSJSONReadingMutableContainers error:&jsonErr];
+        
+    }];
+
+    [request startAsynchronous];
 }
 
 @end

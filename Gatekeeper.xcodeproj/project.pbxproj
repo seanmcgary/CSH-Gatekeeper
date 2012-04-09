@@ -46,6 +46,8 @@
 		4315338415328B6500F5A42E /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4315338315328B6500F5A42E /* libxml2.dylib */; };
 		43153387153291CB00F5A42E /* GKDoorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43153386153291CB00F5A42E /* GKDoorViewController.m */; };
 		4315338B153293A800F5A42E /* GKDoorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4315338A153293A800F5A42E /* GKDoorCell.m */; };
+		4315338E1532965D00F5A42E /* GKDoorActionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4315338D1532965D00F5A42E /* GKDoorActionButton.m */; };
+		431533921532990400F5A42E /* GKPrefHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 431533911532990400F5A42E /* GKPrefHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -124,6 +126,10 @@
 		43153386153291CB00F5A42E /* GKDoorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKDoorViewController.m; sourceTree = "<group>"; };
 		43153389153293A800F5A42E /* GKDoorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKDoorCell.h; sourceTree = "<group>"; };
 		4315338A153293A800F5A42E /* GKDoorCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKDoorCell.m; sourceTree = "<group>"; };
+		4315338C1532965C00F5A42E /* GKDoorActionButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKDoorActionButton.h; sourceTree = "<group>"; };
+		4315338D1532965D00F5A42E /* GKDoorActionButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKDoorActionButton.m; sourceTree = "<group>"; };
+		431533901532990400F5A42E /* GKPrefHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKPrefHelper.h; sourceTree = "<group>"; };
+		431533911532990400F5A42E /* GKPrefHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKPrefHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +186,7 @@
 		43153309153287BE00F5A42E /* Gatekeeper */ = {
 			isa = PBXGroup;
 			children = (
+				4315338F153298EF00F5A42E /* GKHelpers */,
 				431533711532887900F5A42E /* GKViewControllers */,
 				4315331A153287EC00F5A42E /* ASIHTTPRequest */,
 				43153312153287BE00F5A42E /* GKAppDelegate.h */,
@@ -318,8 +325,19 @@
 			children = (
 				43153389153293A800F5A42E /* GKDoorCell.h */,
 				4315338A153293A800F5A42E /* GKDoorCell.m */,
+				4315338C1532965C00F5A42E /* GKDoorActionButton.h */,
+				4315338D1532965D00F5A42E /* GKDoorActionButton.m */,
 			);
 			name = GKDoorViewElements;
+			sourceTree = "<group>";
+		};
+		4315338F153298EF00F5A42E /* GKHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				431533901532990400F5A42E /* GKPrefHelper.h */,
+				431533911532990400F5A42E /* GKPrefHelper.m */,
+			);
+			name = GKHelpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -415,6 +433,8 @@
 				43153377153288BF00F5A42E /* GKLoginViewController.m in Sources */,
 				43153387153291CB00F5A42E /* GKDoorViewController.m in Sources */,
 				4315338B153293A800F5A42E /* GKDoorCell.m in Sources */,
+				4315338E1532965D00F5A42E /* GKDoorActionButton.m in Sources */,
+				431533921532990400F5A42E /* GKPrefHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

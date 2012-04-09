@@ -12,7 +12,9 @@
 @interface GKDoorViewController : UITableViewController
 
 @property (strong, nonatomic) NSMutableArray *statuses;
+@property (strong, nonatomic) NSString *username;
+@property (strong, nonatomic) NSString *password;
 
-- (id) initWithDoorStatuses: (NSMutableArray *)doorStatuses;
+- (id) initWithDoorStatuses: (NSMutableArray *)doorStatuses andCreds: (NSString *) username: (NSString *) password;
 
 @end

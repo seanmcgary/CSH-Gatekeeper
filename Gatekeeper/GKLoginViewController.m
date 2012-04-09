@@ -18,7 +18,9 @@
             loginButton,
             password,
             statusLabel,
-            spinner;
+            spinner,
+            saveCredentials,
+            saveCredentialsLabel;
 
 - (id) init 
 {
@@ -69,17 +71,29 @@
     [loginButton addTarget:self action:@selector(submitLogin:) forControlEvents:UIControlEventTouchUpInside];
     
     
+    saveCredentialsLabel = [[UILabel alloc] initWithFrame:
+                   CGRectMake(10, 133, 120, 31)];
+    saveCredentialsLabel.backgroundColor = [UIColor clearColor];
+    saveCredentialsLabel.text = @"Save?";
+    
+    saveCredentials = [[UISwitch alloc] initWithFrame:CGRectMake(130, 133, 60, 31)];
+    
+    
     statusLabel = [[UILabel alloc] initWithFrame:
-                   CGRectMake(10, 133, (self.view.frame.size.width - 20), 31)];
+                   CGRectMake(10, 158, (self.view.frame.size.width - 20), 31)];
     statusLabel.backgroundColor = [UIColor clearColor];
     
     spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     
-    spinner.frame = CGRectMake((self.view.frame.size.width - 50) / 2, 154, 50, 50);
+    spinner.frame = CGRectMake((self.view.frame.size.width - 50) / 2, 168, 50, 50);
+    
+    
     
     [self.view addSubview:username];
     [self.view addSubview:password];
     [self.view addSubview:loginButton];
+    [self.view addSubview:saveCredentialsLabel];
+    [self.view addSubview:saveCredentials];
     [self.view addSubview:statusLabel];
     [self.view addSubview:spinner];
 }
@@ -120,11 +134,17 @@
             NSError *jsonErr;
             
             NSMutableDictionary *jsonResp = [NSJSONSerialization JSONObjectWithData:respData options:NSJSONReadingMutableContainers error:&jsonErr];
-            NSLog(@"JSON:\n%@", jsonResp);
             
             if([[jsonResp objectForKey:@"success"] integerValue] == 1 && [[[jsonResp objectForKey:@"response"] objectAtIndex:0] objectForKey:@"pop"])
             {
-                GKDoorViewController *doorController = [[GKDoorViewController alloc] initWithDoorStatuses:[jsonResp objectForKey:@"response"]];
+                
+                if(self.saveCredentials.on){
+                    [GKPrefHelper saveUsernameAndPassword:username.text :password.text];
+                }
+                
+                GKDoorViewController *doorController = [[GKDoorViewController alloc] initWithDoorStatuses:[jsonResp objectForKey:@"response"] andCreds:username.text :password.text];
+                
+                
                 
                 [self.navigationController pushViewController:doorController animated:YES];
             }
