@@ -1,0 +1,265 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		43153304153287BE00F5A42E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43153303153287BE00F5A42E /* UIKit.framework */; };
+		43153306153287BE00F5A42E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43153305153287BE00F5A42E /* Foundation.framework */; };
+		43153308153287BE00F5A42E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43153307153287BE00F5A42E /* CoreGraphics.framework */; };
+		4315330E153287BE00F5A42E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4315330C153287BE00F5A42E /* InfoPlist.strings */; };
+		43153310153287BE00F5A42E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4315330F153287BE00F5A42E /* main.m */; };
+		43153314153287BE00F5A42E /* GKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 43153313153287BE00F5A42E /* GKAppDelegate.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		431532FF153287BE00F5A42E /* Gatekeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gatekeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		43153303153287BE00F5A42E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		43153305153287BE00F5A42E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		43153307153287BE00F5A42E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		4315330B153287BE00F5A42E /* Gatekeeper-Info.plist */ = {isa = PBXFileReference; path = "Gatekeeper-Info.plist"; sourceTree = "<group>"; };
+		4315330D153287BE00F5A42E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4315330F153287BE00F5A42E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		43153311153287BE00F5A42E /* Gatekeeper-Prefix.pch */ = {isa = PBXFileReference; path = "Gatekeeper-Prefix.pch"; sourceTree = "<group>"; };
+		43153312153287BE00F5A42E /* GKAppDelegate.h */ = {isa = PBXFileReference; path = GKAppDelegate.h; sourceTree = "<group>"; };
+		43153313153287BE00F5A42E /* GKAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKAppDelegate.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		431532FC153287BE00F5A42E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43153304153287BE00F5A42E /* UIKit.framework in Frameworks */,
+				43153306153287BE00F5A42E /* Foundation.framework in Frameworks */,
+				43153308153287BE00F5A42E /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		431532F4153287BE00F5A42E = {
+			isa = PBXGroup;
+			children = (
+				43153309153287BE00F5A42E /* Gatekeeper */,
+				43153302153287BE00F5A42E /* Frameworks */,
+				43153300153287BE00F5A42E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		43153300153287BE00F5A42E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				431532FF153287BE00F5A42E /* Gatekeeper.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		43153302153287BE00F5A42E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				43153303153287BE00F5A42E /* UIKit.framework */,
+				43153305153287BE00F5A42E /* Foundation.framework */,
+				43153307153287BE00F5A42E /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		43153309153287BE00F5A42E /* Gatekeeper */ = {
+			isa = PBXGroup;
+			children = (
+				43153312153287BE00F5A42E /* GKAppDelegate.h */,
+				43153313153287BE00F5A42E /* GKAppDelegate.m */,
+				4315330A153287BE00F5A42E /* Supporting Files */,
+			);
+			path = Gatekeeper;
+			sourceTree = "<group>";
+		};
+		4315330A153287BE00F5A42E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4315330B153287BE00F5A42E /* Gatekeeper-Info.plist */,
+				4315330C153287BE00F5A42E /* InfoPlist.strings */,
+				4315330F153287BE00F5A42E /* main.m */,
+				43153311153287BE00F5A42E /* Gatekeeper-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		431532FE153287BE00F5A42E /* Gatekeeper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 43153317153287BE00F5A42E /* Build configuration list for PBXNativeTarget "Gatekeeper" */;
+			buildPhases = (
+				431532FB153287BE00F5A42E /* Sources */,
+				431532FC153287BE00F5A42E /* Frameworks */,
+				431532FD153287BE00F5A42E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Gatekeeper;
+			productName = Gatekeeper;
+			productReference = 431532FF153287BE00F5A42E /* Gatekeeper.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		431532F6153287BE00F5A42E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = GK;
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = RIT;
+			};
+			buildConfigurationList = 431532F9153287BE00F5A42E /* Build configuration list for PBXProject "Gatekeeper" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 431532F4153287BE00F5A42E;
+			productRefGroup = 43153300153287BE00F5A42E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				431532FE153287BE00F5A42E /* Gatekeeper */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		431532FD153287BE00F5A42E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4315330E153287BE00F5A42E /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		431532FB153287BE00F5A42E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43153310153287BE00F5A42E /* main.m in Sources */,
+				43153314153287BE00F5A42E /* GKAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4315330C153287BE00F5A42E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4315330D153287BE00F5A42E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		43153315153287BE00F5A42E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		43153316153287BE00F5A42E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		43153318153287BE00F5A42E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Gatekeeper/Gatekeeper-Prefix.pch";
+				INFOPLIST_FILE = "Gatekeeper/Gatekeeper-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		43153319153287BE00F5A42E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Gatekeeper/Gatekeeper-Prefix.pch";
+				INFOPLIST_FILE = "Gatekeeper/Gatekeeper-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		431532F9153287BE00F5A42E /* Build configuration list for PBXProject "Gatekeeper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43153315153287BE00F5A42E /* Debug */,
+				43153316153287BE00F5A42E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		43153317153287BE00F5A42E /* Build configuration list for PBXNativeTarget "Gatekeeper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43153318153287BE00F5A42E /* Debug */,
+				43153319153287BE00F5A42E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 431532F6153287BE00F5A42E /* Project object */;
+}
