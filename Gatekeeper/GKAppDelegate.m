@@ -11,12 +11,18 @@
 @implementation GKAppDelegate
 
 @synthesize window = _window;
+@synthesize gkNavController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+    
+    gkNavController = [[GKNavigationController alloc] init];
+    
+    self.window.rootViewController = gkNavController;
+    
     [self.window makeKeyAndVisible];
     return YES;
 }
