@@ -62,8 +62,6 @@
 {
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.gatekeeper.csh.rit.edu/pop/%u", [[door objectForKey:@"id"] integerValue]]];
     
-    NSLog(@"URL: %@", url);
-    
     __block ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
     NSMutableDictionary *requestHeaders = [[NSMutableDictionary alloc] initWithObjectsAndKeys:@"application/json", @"Accept", nil];
     
@@ -83,15 +81,9 @@
         NSError *jsonErr;
         
         NSMutableDictionary *jsonResp = [NSJSONSerialization JSONObjectWithData:respData options:NSJSONReadingMutableContainers error:&jsonErr];
-        NSLog(@"JSON:\n%@", jsonResp);
         
-        if([[jsonResp objectForKey:@"success"] integerValue] == 1){
-            self.detailTextLabel.text = @"unlocked";
-            
-            sleep(5);
-            
-            self.detailTextLabel.text = @"locked";
-        }
+        //if([[jsonResp objectForKey:@"success"] integerValue] == 1){
+        //}
         
         
     }];

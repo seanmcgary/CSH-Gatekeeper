@@ -26,8 +26,6 @@
         self.statuses = [[NSMutableArray alloc] initWithArray: doorStatuses];
         self.username = username;
         self.password = password;
-        
-        NSLog(@"statuses: %@", self.statuses);
     }
     
     return self;

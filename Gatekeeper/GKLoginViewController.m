@@ -87,7 +87,14 @@
     
     spinner.frame = CGRectMake((self.view.frame.size.width - 50) / 2, 168, 50, 50);
     
+    NSMutableDictionary *creds = [[NSMutableDictionary alloc] initWithDictionary:[GKPrefHelper getUserNameAndPassword]];
     
+    if(creds){
+        username.text = [creds objectForKey:@"username"];
+        password.text = [creds objectForKey:@"password"];
+        
+        saveCredentials.on = YES;
+    }
     
     [self.view addSubview:username];
     [self.view addSubview:password];
@@ -175,7 +182,6 @@
         // provide a username and password
         self.statusLabel.text = @"Provide a username and password";
     }
-    NSLog(@"login");
 }
 
 @end
